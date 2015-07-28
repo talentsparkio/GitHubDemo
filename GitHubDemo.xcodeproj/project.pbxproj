@@ -30,6 +30,7 @@
 		48964DA2F88E8DF4D2A9B234 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C39D8E8958E8F29F47BF5F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		83255C4D375DAE0E4FF37B84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		83378D6D1B6818CF002811A9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = GitHubDemo/Playgrounds/MyPlayground.playground; sourceTree = "<group>"; };
 		837CE6021B67E4BA005A1371 /* GitHubDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837CE6051B67E4BA005A1371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		837CE6071B67E4BA005A1371 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,9 +62,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83378D6C1B6812F6002811A9 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				83378D6D1B6818CF002811A9 /* MyPlayground.playground */,
+			);
+			name = Playgrounds;
+			sourceTree = "<group>";
+		};
 		837CE5F91B67E4BA005A1371 = {
 			isa = PBXGroup;
 			children = (
+				83378D6C1B6812F6002811A9 /* Playgrounds */,
 				837CE6041B67E4BA005A1371 /* GitHubDemo */,
 				837CE6191B67E4BA005A1371 /* GitHubDemoTests */,
 				837CE6031B67E4BA005A1371 /* Products */,
