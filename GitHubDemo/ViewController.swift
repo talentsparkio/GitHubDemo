@@ -14,14 +14,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.blueColor()
-        view.backgroundColor = UIColor.darkGrayColor()
+
+        view.backgroundColor = UIColor.whiteColor()
         
         hello = UILabel(frame: CGRectMake(27.5, 100, 320, 30))
         if let hello = hello {
             hello.textAlignment = NSTextAlignment.Center
-            hello.textColor = UIColor.whiteColor()
+            hello.textColor = UIColor.blackColor()
             hello.font = UIFont(name: "System", size: 20)
             hello.text = "Hello, World!"
             view.addSubview(hello)
@@ -32,7 +31,8 @@ class ViewController: UIViewController {
         world.clipsToBounds = true
         view.addSubview(world)
         
-        let button = UIButton(frame: CGRectMake(27.5, 400, 320, 30))
+        let button = UIButton(type: UIButtonType.RoundedRect)
+        button.frame = CGRectMake(27.5, 400, 320, 30)
         button.titleLabel?.textColor = UIColor.whiteColor()
         button.titleLabel?.font = UIFont.systemFontOfSize(18)
         button.setTitle("Click me", forState: UIControlState.Normal)
