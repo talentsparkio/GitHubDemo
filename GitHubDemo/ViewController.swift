@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     var hello: UILabel?
     
@@ -38,17 +38,44 @@ class ViewController: UIViewController {
         button.setTitle("Click me", forState: UIControlState.Normal)
         button.addTarget(self, action: "buttonClicked", forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(button)
+        
+        let textField = UITextField(frame: CGRectMake(27.5, 435, 320, 20))
+        textField.placeholder = "Enter some text"
+        textField.borderStyle = UITextBorderStyle.RoundedRect
+        textField.keyboardType = UIKeyboardType.Default
+        textField.delegate = self
+        view.addSubview(textField)
     }
     
     func buttonClicked() {
         hello?.text = "Hello, Clicker!"
     }
     
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if let hello = hello {
+            hello.text = textField.text
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if let hello = hello {
+            hello.text = "Waiting for input...."
+        }
+    }
+
+    // MARK: -
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
 }
 
