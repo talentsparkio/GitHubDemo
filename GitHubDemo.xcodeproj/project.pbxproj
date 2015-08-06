@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		837CE6061B67E4BA005A1371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837CE6051B67E4BA005A1371 /* AppDelegate.swift */; };
-		837CE6081B67E4BA005A1371 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837CE6071B67E4BA005A1371 /* ViewController.swift */; };
+		837CE6081B67E4BA005A1371 /* GitHubLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837CE6071B67E4BA005A1371 /* GitHubLandingViewController.swift */; };
 		837CE60B1B67E4BA005A1371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837CE6091B67E4BA005A1371 /* Main.storyboard */; };
 		837CE60D1B67E4BA005A1371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837CE60C1B67E4BA005A1371 /* Assets.xcassets */; };
 		837CE6101B67E4BA005A1371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837CE60E1B67E4BA005A1371 /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		83378D6D1B6818CF002811A9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = GitHubDemo/Playgrounds/MyPlayground.playground; sourceTree = "<group>"; };
 		837CE6021B67E4BA005A1371 /* GitHubDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		837CE6051B67E4BA005A1371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		837CE6071B67E4BA005A1371 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		837CE6071B67E4BA005A1371 /* GitHubLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLandingViewController.swift; sourceTree = "<group>"; };
 		837CE60A1B67E4BA005A1371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		837CE60C1B67E4BA005A1371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		837CE60F1B67E4BA005A1371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				837CE6051B67E4BA005A1371 /* AppDelegate.swift */,
-				837CE6071B67E4BA005A1371 /* ViewController.swift */,
+				837CE6071B67E4BA005A1371 /* GitHubLandingViewController.swift */,
 				837CE6091B67E4BA005A1371 /* Main.storyboard */,
 				837CE60C1B67E4BA005A1371 /* Assets.xcassets */,
 				837CE60E1B67E4BA005A1371 /* LaunchScreen.storyboard */,
@@ -281,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837CE6081B67E4BA005A1371 /* ViewController.swift in Sources */,
+				837CE6081B67E4BA005A1371 /* GitHubLandingViewController.swift in Sources */,
 				837CE6061B67E4BA005A1371 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
