@@ -71,6 +71,12 @@
                             <constraint firstItem="JAf-OG-uNi" firstAttribute="centerX" secondItem="4HL-xT-0Y2" secondAttribute="centerX" id="tq8-FA-RRh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avatar" destination="55f-9U-u6i" id="tJR-Xv-uvg"/>
+                        <outlet property="descriptionLabel" destination="uFB-go-olp" id="kQT-WT-NJf"/>
+                        <outlet property="locationLabel" destination="vJh-Rw-Ixn" id="8ow-mF-CQq"/>
+                        <outlet property="organizationLabel" destination="ghR-aJ-K0n" id="bIt-r6-07d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDb-2j-r9D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

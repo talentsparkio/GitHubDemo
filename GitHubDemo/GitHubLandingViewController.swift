@@ -10,14 +10,17 @@ import UIKit
 
 class GitHubOrgLandingViewController: UIViewController {
     
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var organizationLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
