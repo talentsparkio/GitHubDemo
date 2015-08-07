@@ -20,8 +20,8 @@ task.resume()
 
 // This is how to do it using Alamofire
 Alamofire.request(.GET, "https://api.github.com/orgs/github")
-    .responseJSON { _, _, data, _ in
-        let json = JSON(data!)
+    .responseJSON { _, _, data in
+        let json = JSON(data.value!)
         print(json["avatar_url"])
         print(json["name"])
         print(json["description"])
@@ -29,9 +29,8 @@ Alamofire.request(.GET, "https://api.github.com/orgs/github")
 }
 
 Alamofire.request(.GET, "https://api.github.com/orgs/github/members")
-    .responseJSON { _, _, data, _ in
-        let json = JSON(data!)
-        
+    .responseJSON { _, _, data in
+        let json = JSON(data.value!)
         for member in json.arrayValue {
             print(member["login"].stringValue)
             print(member["avatar_url"].stringValue)
