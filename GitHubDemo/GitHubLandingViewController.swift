@@ -15,8 +15,16 @@ class GitHubOrgLandingViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    var spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spinner.center = CGPointMake(view.bounds.width / 2, view.bounds.height / 2)
+        spinner.hidesWhenStopped = true
+        self.view.addSubview(spinner)
+        spinner.startAnimating()
+        
         GitHubOrganization().fetchOrganizationDetails { (org: GitHubOrganization.Organization) -> () in
             self.organizationLabel.text = org.organizationName
             self.descriptionLabel.text = org.description
@@ -28,6 +36,8 @@ class GitHubOrgLandingViewController: UIViewController {
                     self.avatar.image = UIImage(data: data)
                 }
             }
+            
+            self.spinner.stopAnimating()
         }
     }
     
