@@ -34,6 +34,8 @@ class GitHubOrgLandingViewController: UIViewController {
                 if let data = NSData(contentsOfURL: url){
                     self.avatar.contentMode = UIViewContentMode.ScaleAspectFit
                     self.avatar.image = UIImage(data: data)
+                } else {
+                    self.avatar.image = UIImage(named: "World")
                 }
             }
             
