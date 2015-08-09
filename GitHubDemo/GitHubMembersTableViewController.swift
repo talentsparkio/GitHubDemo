@@ -45,10 +45,14 @@ class GitHubMembersTableViewController: UITableViewController {
         cell.textLabel?.text = member.login
         
         if let url = NSURL(string: member.avatarUrl) {
-            if let data = NSData(contentsOfURL: url){
-                if let avatarSquare = UIImage(data: data) {
-                    let avatarCircle = UIImage.roundedRectImageFromImage(avatarSquare, imageSize: avatarSquare.size, cornerRadius: avatarSquare.size.width / 2)
-                    cell.imageView?.image = avatarCircle
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // Dispatch on this thread
+                if let data = NSData(contentsOfURL: url){
+                    if let avatarSquare = UIImage(data: data) {
+                        dispatch_async(dispatch_get_main_queue()) { // When we finally want to display the image use UI thread
+                            let avatarCircle = UIImage.roundedRectImageFromImage(avatarSquare, imageSize: avatarSquare.size, cornerRadius: avatarSquare.size.width / 2)
+                            cell.imageView?.image = avatarCircle
+                        }
+                    }
                 }
             }
         }
