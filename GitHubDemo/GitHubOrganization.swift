@@ -25,8 +25,6 @@ public class GitHubOrganization {
         let avatarUrl: String
     }
     
-    public init() {}
-    
     func fetchOrganizationDetails(callback: (Organization) -> Void) {
         // Fetch organization details
         Alamofire.request(.GET, "https://api.github.com/orgs/" + GitHubOrganization.DEFAULT_ORGANIZATION_NAME)
@@ -34,7 +32,12 @@ public class GitHubOrganization {
                 self.populateOrganizationInfoWith(jsonObj.value!, callback: callback)
         }
     }
-    
+
+    func populateOrganizationInfoWith(data: AnyObject?, callback: (Organization) -> Void) {
+        let json = JSON(data!)
+        callback(Organization(avatarURL: json["avatar_url"].stringValue,organizationName: json["name"].stringValue, description: json["description"].stringValue, location: json["location"].stringValue))
+    }
+
     func fetchMembersDetails(callback: ([Member]) -> Void) {
         // Fetch organization members
         Alamofire.request(.GET, "https://api.github.com/orgs/" + GitHubOrganization.DEFAULT_ORGANIZATION_NAME + "/members")
@@ -42,11 +45,6 @@ public class GitHubOrganization {
                 self.populateOrganizationMembersWith(jsonObj.value!, callback: callback)
         }
         
-    }
-    
-    func populateOrganizationInfoWith(data: AnyObject?, callback: (Organization) -> Void) {
-        let json = JSON(data!)
-        callback(Organization(avatarURL: json["avatar_url"].stringValue,organizationName: json["name"].stringValue, description: json["description"].stringValue, location: json["location"].stringValue))
     }
     
     func populateOrganizationMembersWith(data: AnyObject?, callback: ([Member]) -> Void) {
