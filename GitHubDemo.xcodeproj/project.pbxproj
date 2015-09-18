@@ -188,6 +188,7 @@
 				TargetAttributes = {
 					837CE6011B67E4BA005A1371 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = D7FHTM26EZ;
 					};
 					837CE6151B67E4BA005A1371 = {
 						CreatedOnToolsVersion = 7.0;
@@ -418,10 +419,13 @@
 			baseConfigurationReference = 83255C4D375DAE0E4FF37B84 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GitHubDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.talentspark.githubdemo.GitHubDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -430,10 +434,13 @@
 			baseConfigurationReference = 58C39D8E8958E8F29F47BF5F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GitHubDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.talentspark.githubdemo.GitHubDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

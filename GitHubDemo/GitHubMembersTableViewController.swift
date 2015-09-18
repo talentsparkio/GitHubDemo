@@ -10,6 +10,9 @@ import UIKit
 
 class GitHubMembersTableViewController: UITableViewController {
     var members: [GitHubOrganization.Member] = []
+
+    // Currently this is an unbounded cache - you probably want to use something like a LRU
+    var cachedImages = [String: UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,21 +47,31 @@ class GitHubMembersTableViewController: UITableViewController {
         let member = members[indexPath.row]
         cell.textLabel?.text = member.login
         
-        if let url = NSURL(string: member.avatarUrl) {
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) { // Dispatch on this thread
-                if let data = NSData(contentsOfURL: url){
-                    if let avatarSquare = UIImage(data: data) {
-                        dispatch_async(dispatch_get_main_queue()) { // When we finally want to display the image use UI thread
+        loadOrFetchImageFor(member.login, avatarUrl: member.avatarUrl, cell: cell)
+        
+        return cell
+    }
+
+    func loadOrFetchImageFor(login: String, avatarUrl: String, cell: UITableViewCell) -> Void {
+        if let image = cachedImages[login] { // already in cache
+            cell.imageView?.image = image
+        } else {
+            if let url = NSURL(string: avatarUrl) { // need to fetch
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0))  {
+                    if let data = NSData(contentsOfURL: url) {
+                        if let avatarSquare = UIImage(data:data) {
                             let avatarCircle = UIImage.roundedRectImageFromImage(avatarSquare, imageSize: avatarSquare.size, cornerRadius: avatarSquare.size.width / 2)
-                            cell.imageView?.image = avatarCircle
+                            self.cachedImages.updateValue(avatarCircle, forKey: login)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                cell.imageView?.image = avatarCircle
+                            }
                         }
                     }
                 }
             }
         }
-        
-        return cell
     }
+
 }
 
 // http://stackoverflow.com/questions/7399343/making-a-uiimage-to-a-circle-form
